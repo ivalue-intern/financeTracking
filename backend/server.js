@@ -7,6 +7,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.json({
+        message: "Api Was running successfully"
+    });
+});
+
 /* GET ALL TRANSACTIONS */
 
 app.get("/transactions", (req, res) => {
