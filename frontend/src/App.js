@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { saveAs } from "file-saver";
 
+
 import {
   Pie
 } from "react-chartjs-2";
@@ -44,7 +45,7 @@ const fetchTransactions = async () => {
   setLoading(true);
 
   const res = await axios.get(
-    "http://localhost:5000/transactions"
+    "http://13.201.52.72:5000/transactions"
   );
 
   setTransactions(res.data);
@@ -61,7 +62,7 @@ const fetchTransactions = async () => {
   const addTransaction = async () => {
 if (editingId) {
   await axios.put(
-    `http://localhost:5000/transactions/${editingId}`,
+    `http://13.201.52.72:5000/transactions/${editingId}`,
     {
       title,
       amount,
@@ -84,7 +85,7 @@ if (editingId) {
 }
     
     await axios.post(
-      "http://localhost:5000/transactions",
+      "http://13.201.52.72:5000/transactions",
       {
         title,
         amount,
@@ -104,7 +105,7 @@ if (editingId) {
   const updateTransaction = async () => {
 
   await axios.put(
-    `http://localhost:5000/transactions/${editingId}`,
+    `http://13.201.52.72:5000/transactions/${editingId}`,
     {
       title,
       amount,
@@ -132,7 +133,7 @@ if (editingId) {
   const deleteTransaction = async (id) => {
 
     await axios.delete(
-      `http://localhost:5000/transactions/${id}`
+      `http://13.201.52.72:5000/transactions/${id}`
     );
     toast.error("Transaction Deleted!");
 
